@@ -2,9 +2,18 @@ import random
 k='kamień'
 p='papier'
 n='nożyce'
+            
+
+def marceli():
+    while True:
+        gra = input("wybierz papier, nożyce czy kamień: ")
+        if gra in (k, n, p):
+            return gra
+        print("źle!")
+
 
 def p_k_n():
-    gra=input('co wybierasz? ')
+    gra=marceli()
     z=[p,k,n]
     t=random.choice(z)
     print("gracz:", gra)
@@ -23,8 +32,9 @@ def p_k_n():
         print('przegral gracz,','wygrywa komputer')
     if t==p and gra==n:
         print('wygrywa gracz,','przegrywa komputer')
+        
     
     
 
-while True:
+for i in range(3):
     p_k_n()
