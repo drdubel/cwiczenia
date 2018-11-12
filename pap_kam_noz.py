@@ -55,10 +55,10 @@ def p_k_n_c(grw, trw):
             grw+=1
             print('gracz ma:', grw, 'a komputer:', trw)
         if grw==3:
-            print('wygrywa  gracz')
+            print('gracz wygrywa ',3-trw, 'punktami')
             return
         if trw==3:
-            print('wygrywa  komputer')
+            print('komputer wygrywa ',3-grw, 'punktami')
             return
             
 
