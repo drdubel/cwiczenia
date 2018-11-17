@@ -3,14 +3,13 @@ k='kamień'
 p='papier'
 n='nożyce'
 c='czarna_dz'
-
+    
 def marceli():
     while True:
         gra = input("wybierz papier, nożyce, kamień czy czarną dziurę: ")
         if gra in (k, n, p, c):
             return gra
         print("źle!")
-
 
 def p_k_n_c(grw, trw):
     while grw or trw<3:
@@ -19,49 +18,33 @@ def p_k_n_c(grw, trw):
         t=random.choice(z)
         print("gracz:", gra)
         print("program:", t)
-        if t==gra:
-            print('remis')
-            print('gracz ma:', grw, 'a komputer:', trw)
-        if t==p and gra==k:
+        if t == gra:
+            print("remis")
+        if (gra != t and gra == k and t == p
+                or gra == p and t == n
+                or gra == n and t == k
+                or gra != c and t == c):
             print('przegral gracz,','wygrywa komputer')
             trw+=1
             print('gracz ma:', grw, 'a komputer:', trw)
-        if t==k and gra==p:
-            r=print('wygrywa gracz,','przegrywa komputer')
-            grw+=1
-            print('gracz ma:', grw, 'a komputer:', trw)
-        if t==k and gra==n:
-            g=print('przegral gracz,','wygrywa komputer')
-            trw+=1
-            print('gracz ma:', grw, 'a komputer:', trw)
-        if t==n and gra==k:
-            print('wygrywa gracz,','przegrywa komputer')
-            grw+=1
-            print('gracz ma:', grw, 'a komputer:', trw)
-        if t==n and gra==p:
-            print('przegral gracz,','wygrywa komputer')
-            trw+=1
-            print('gracz ma:', grw, 'a komputer:', trw)
-        if t==p and gra==n:
-            print('wygrywa gracz,','przegrywa komputer')
-            grw+=1
-            print('gracz ma:', grw, 'a komputer:', trw)
-        if t==c and gra != c:
-            print('przegral gracz,','wygrywa komputer')
-            trw+=1
-            print('gracz ma:', grw, 'a komputer:', trw)
-        if t!=c and gra == c:
-            print('wygrywa gracz,','przegrywa komputer')
+        elif gra!=t:
+            print('wygrywa gracz,', 'przegral komputer')
             grw+=1
             print('gracz ma:', grw, 'a komputer:', trw)
         if grw==3:
-            print('gracz wygrywa ',3-trw, 'punktami')
+            if 3-trw==1:
+                print('gracz wygrywa ',3-trw, 'punktem')
+            else:
+                print('gracz wygrywa ',3-trw, 'punktami')
             return
         if trw==3:
-            print('komputer wygrywa ',3-grw, 'punktami')
+            if 3-grw==1:
+                print('komputer wygrywa ',3-grw, 'punktem')
+            else:
+                print('komputer wygrywa ',3-grw, 'punktami')
             return
             
 
 
-p_k_n_c(0 ,0)
+p_k_n_c(0, 0)
     
