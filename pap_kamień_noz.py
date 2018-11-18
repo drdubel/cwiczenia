@@ -3,11 +3,16 @@ KA = 'kamień'
 PA = 'papier'
 NO = 'nożyce'
 CZ = 'czarna_dz'
+KO = 'komputer'
+TR = 'śrut'
 
 wygrywa = {
     KA: PA,
     PA: NO,
     NO: KA,
+    KO: KA,
+    PA: KO,
+    NO: KO,
 }
 
 WYGRANA = 1
@@ -20,6 +25,10 @@ def sedzia(ah, oh):
     if ah == CZ:
         return WYGRANA
     if oh == CZ:
+        return PRZEGRANA
+    if ah == TR and oh != CZ:
+        return WYGRANA
+    if oh == TR and ah != CZ:
         return PRZEGRANA
     if wygrywa[ah] == oh:
         return PRZEGRANA
@@ -37,7 +46,7 @@ def marceli(z):
 def p_k_n_c(tury, pkt_b, pkt_a):
     pkt = 0
     while pkt_b or pkt_a <= tury:
-        z = [PA, KA, NO, CZ]
+        z = [PA, KA, NO, CZ, KO, TR]
         ah = marceli(z)
         oh = random.choice(z)
         koniec = sedzia(ah, oh)
