@@ -1,50 +1,84 @@
 import random
-k='kamień'
-p='papier'
-n='nożyce'
-c='czarna_dz'
-    
-def marceli():
+KA = 'kamień'
+PA = 'papier'
+NO = 'nożyce'
+CZ = 'czarna_dz'
+KO = 'komputer'
+TR = 'śrut'
+
+wygrywa = {
+    KA: PA,
+    PA: NO,
+    NO: KA,
+    KO: KA,
+    PA: KO,
+    NO: KO,
+}
+
+WYGRANA = 1
+PRZEGRANA = -1
+REMIS = 0
+
+def sedzia(ah, oh):
+    if ah == oh:
+        return REMIS
+    if ah == CZ:
+        return WYGRANA
+    if oh == CZ:
+        return PRZEGRANA
+    if ah == TR and oh != CZ:
+        return WYGRANA
+    if oh == TR and ah != CZ:
+        return PRZEGRANA
+    if wygrywa[ah] == oh:
+        return PRZEGRANA
+    else:
+        return WYGRANA
+
+def marceli(z):
     while True:
-        gra = input("wybierz papier, nożyce, kamień czy czarną dziurę: ")
-        if gra in (k, n, p, c):
-            return gra
+        trut = input("wybierz papier, nożyce, kamień czy czarną dziurę: ")
+        if trut in z:
+            return trut
         print("źle!")
 
-def p_k_n_c(grw, trw):
-    while grw or trw<3:
-        gra=marceli()
-        z=[p,k,n,c]
-        t=random.choice(z)
-        print("gracz:", gra)
-        print("program:", t)
-        if t == gra:
-            print("remis")
-        if (gra != t and gra == k and t == p
-                or gra == p and t == n
-                or gra == n and t == k
-                or gra != c and t == c):
-            print('przegral gracz,','wygrywa komputer')
-            trw+=1
-            print('gracz ma:', grw, 'a komputer:', trw)
-        elif gra!=t:
-            print('wygrywa gracz,', 'przegral komputer')
-            grw+=1
-            print('gracz ma:', grw, 'a komputer:', trw)
-        if grw==3:
-            if 3-trw==1:
-                print('gracz wygrywa ',3-trw, 'punktem')
-            else:
-                print('gracz wygrywa ',3-trw, 'punktami')
-            return
-        if trw==3:
-            if 3-grw==1:
-                print('komputer wygrywa ',3-grw, 'punktem')
-            else:
-                print('komputer wygrywa ',3-grw, 'punktami')
-            return
-            
 
-
-p_k_n_c(0, 0)
+def p_k_n_c(tury):
+    pkt = 0
+    pkt_b = 0
+    pkt_a = 0
+    while pkt_b or pkt_a <= tury:
+        z = [PA, KA, NO, CZ, KO, TR]
+        ah = marceli(z)
+        oh = random.choice(z)
+        koniec = sedzia(ah, oh)
+        pkt += koniec
+        print('komputer wybrał:', oh)
+        print('gracz wybrał:', ah)
+        if koniec == REMIS:
+            print('remis')
+            print('gracz ma', pkt_b, 'a komputer', pkt_a) 
+        if koniec == WYGRANA and ah != PA and oh != NO:
+            print('wygrał gracz')
+            pkt_b += 1
+            print('gracz ma', pkt_b, 'a komputer', pkt_a) 
+        if koniec == PRZEGRANA or ah == PA and oh == NO:
+            print('przegrał gracz a wygrał komputer')
+            pkt_a += 1
+            print('gracz ma', pkt_b, 'a komputer', pkt_a)
+        if pkt_b == tury:
+            if tury - pkt_a == 1:
+                print('gracz wygrał', 'jednym punktem')
+            else:
+                print('gracz wygrał', tury - pkt_a, 'punktami')
+            return
+        if pkt_a == tury:
+            if tury - pkt_b == 1:
+                print('komputer wygrał', 'jednym punktem')
+            else:
+                print('komputer wygrał', tury - pkt_b, 'punktami')
+            return
     
+
+
+p_k_n_c(9)
