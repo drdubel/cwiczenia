@@ -14,8 +14,6 @@ def kls(il_ziaren):
     if il_ziaren < 2:
         raise MalformedEar("za mało ziaren, nie mniej niż 2")
     a = 250 /(2*il_ziaren)
-
-
     def ziarno():
         t.fillcolor("yellow")
         t.begin_fill()
@@ -43,8 +41,4 @@ def kls(il_ziaren):
     t.rt(45)
     ziarno()
 
-
-try:
-    kls(100)
-except MalformedEar:
-    kls(3)
+kls(10)
