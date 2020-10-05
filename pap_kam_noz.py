@@ -37,7 +37,7 @@ def sedzia(ah, oh):
 
 def marceli(z):
     while True:
-        trut = input("wybierz papier, nożyce, kamień czy czarną dziurę: ")
+        trut = input("wybierz papier, nożyce, kamień, komputer, śrut, czy czarną dziurę: ")
         if trut in z:
             return trut
         print("źle!")
