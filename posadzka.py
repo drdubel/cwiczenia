@@ -2,7 +2,7 @@ import turtle
 t = turtle.Pen()
 t.speed(0)
 
-class MalformedEar(Exception):
+class MalformedTile(Exception):
     pass
 
 def kwadrat():
@@ -48,11 +48,11 @@ def kafelki4():
 
 def posadzka(n):
     if n < 2:
-        raise MalformedEar("za mało kafelków, nie mniej niż 2")
+        raise MalformedTile("za mało kafelków, nie mniej niż 2")
     if n > 12:
-        raise MalformedEar("za dużo kafelków, nie więcej niż 12")
+        raise MalformedTile("za dużo kafelków, nie więcej niż 12")
     if n%2 != 0:
-        raise MalformedEar("liczba jest nieparszysta, musi być parzysta")
+        raise MalformedTile("liczba jest nieparszysta, musi być parzysta")
     for i in range(n//2):
         for i in range(n-2):
             kafelki4()
