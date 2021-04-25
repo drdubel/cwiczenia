@@ -1,0 +1,5 @@
+*.pyc
+.pytest_cache
+*.out
+.vscode
+__pycache__
