@@ -42,10 +42,9 @@ def marceli(z):
             return trut
         print("źle!")
 
-
 def p_k_n_c(tury, pkt_b, pkt_a):
     pkt = 0
-    while pkt_b or pkt_a <= tury:
+    while pkt_b <= tury or pkt_a <= tury:
         z = [PA, KA, NO, CZ, KO, TR]
         ah = marceli(z)
         oh = random.choice(z)
