@@ -132,5 +132,5 @@ def wisielec(slowa_do_wisielcowania):
 #    print('Loading'+'#'*(i//(proby//100)), f'{i/(proby/100)}%', end="\r")
 
 #print('\n', f'{wynik}/{proby}', sep='')
-
+print(len(slowa_do_wisielcowania))
 print(wisielec(slowa_do_wisielcowania))
