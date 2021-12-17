@@ -23,16 +23,12 @@ def wisielec():
     zgadywane_litery = ''
     n = input('Chcesz z odmianami czy nie? ')
     if n.lower() == 'tak':
-        slowa_do_wisielcowania = open(r"/home/antek/Katalog_Antka/cwiczenia/pozostałe/slowa.txt", encoding='utf-8').read()
+        slowa_do_wisielcowania = open(r"Tu wpisz położenie pliku ze słowami", encoding='utf-8').read()
         slowa_do_wisielcowania = slowa_do_wisielcowania.split()
     elif n.lower() == 'nie':
-        slowa_do_wisielcowania = open(r"~/wisielecslowa.txt", encoding='utf-8').read()
+        slowa_do_wisielcowania = open(r"Tu wpisz położenie pliku ze słowami", encoding='utf-8').read()
         slowa_do_wisielcowania = slowa_do_wisielcowania.split()
     wisielcowane_slowo = random.choice(slowa_do_wisielcowania)
-    if len(wisielcowane_slowo) < 4:
-        podp_il = 1
-    else:
-        podp_il = len(wisielcowane_slowo)//4
     bez_zgad_lit = wisielcowane_slowo.lower()
     while zle_proby_zgad < dl_gry:
         if zgadywane_litery == '':
@@ -41,16 +37,7 @@ def wisielec():
             print(ret('WYGRAŁEŚ', '–'))
             return ret("Wisielcowanym słowem było " + wisielcowane_slowo, '–')
         aktualnie_zgad_lit = wisielcowane_slowo
-        if podp_il == 0:
-            print('NIE MASZ JUŻ PODPOWIEDZI')
-        elif podp_il == 1:
-            print(f'ZOSTAŁA CI {podp_il} PODPOWIEDŹ')
-        elif podp_il > 1:
-            print(f'ZOSTAŁY CI {podp_il} PODPOWIEDZI')
         podawana_litera = input("Zgadnij literę: ")
-        if podawana_litera == 'podpowiedź':
-            podawana_litera = random.choice(bez_zgad_lit)
-            podp_il -= 1
         podawana_litera = podawana_litera.lower()
         if podawana_litera.isalpha() == False:
             print('możesz podać tylko literę!')
