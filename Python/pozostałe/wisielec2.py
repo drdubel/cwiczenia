@@ -1,19 +1,20 @@
 import random
 import os
-import pickle
 
 rys_wis = {
     1: ('____'),
     2: (' |', ' |', ' |', ' |', '_|___'),
     3: (' ____', ' |', ' |', ' |', ' |', '_|___'),
     4: (' ____', ' |  |', ' |', ' |', ' |', '_|___'),
-    5: (' ____', ' |  |', ' |  \1', ' |', ' |', '_|___'),
-    6: (' ____', ' |  |', ' |  \1', ' | !|! ', ' |', '_|___'),
-    7: (' ____', ' |  |', ' |  \1', ' | !|! ', ' | / \\  ', '_|___'),
+    5: (' ____', ' |  |', ' |  O', ' |', ' |', '_|___'),
+    6: (' ____', ' |  |', ' |  O', ' | !|! ', ' |', '_|___'),
+    7: (' ____', ' |  |', ' |  O', ' | !|! ', ' | / \\  ', '_|___'),
 }
+
 
 def ret(text, wyp):
     return text.center(os.get_terminal_size().columns, wyp)
+
 
 def wisielec():
     dl_gry = 7
@@ -23,10 +24,16 @@ def wisielec():
     zgadywane_litery = ''
     n = input('Chcesz z odmianami czy nie? ')
     if n.lower() == 'tak':
-        slowa_do_wisielcowania = open(r"Tu wpisz położenie pliku ze słowami", encoding='utf-8').read()
+        slowa_do_wisielcowania = open(
+            r"Tu wpisz położenie pliku ze słowami",
+            encoding='utf-8'
+            ).read()
         slowa_do_wisielcowania = slowa_do_wisielcowania.split()
     elif n.lower() == 'nie':
-        slowa_do_wisielcowania = open(r"Tu wpisz położenie pliku ze słowami", encoding='utf-8').read()
+        slowa_do_wisielcowania = open(
+            r"Tu wpisz położenie pliku ze słowami",
+            encoding='utf-8'
+            ).read()
         slowa_do_wisielcowania = slowa_do_wisielcowania.split()
     wisielcowane_slowo = random.choice(slowa_do_wisielcowania)
     bez_zgad_lit = wisielcowane_slowo.lower()
@@ -66,6 +73,7 @@ def wisielec():
             elif zle_proby_zgad == 1:
                 print(rys_wis[zle_proby_zgad])
     print(ret('PRZEGRAŁEŚ', '–'))
-    return ret("Wisielcowanym słowem było " + wisielcowane_slowo, '–') 
+    return ret("Wisielcowanym słowem było " + wisielcowane_slowo, '–')
+
 
 print(wisielec())
