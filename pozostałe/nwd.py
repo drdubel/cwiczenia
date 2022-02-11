@@ -6,4 +6,4 @@ def najw_wspol_dziel(lic_1, lic_2):
     return lic_1
 
 if __name__ == '__main__':
-    print(najw_wspol_dziel(6, 2))
+    print(najw_wspol_dziel(11, 12))
