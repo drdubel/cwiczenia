@@ -1,9 +1,23 @@
-def najw_wspol_dziel(lic_1, lic_2):
-    while lic_2 != 0:
-        resz_dziel = lic_1%lic_2
-        lic_1 = lic_2
-        lic_2 = resz_dziel
-    return lic_1
+def znajdywacz(lista):
+    lista.sort()
+    lista.reverse()
+    poprzednia = 0
+    for liczba in lista:
+        if liczba == poprzednia:
+            return liczba
+        poprzednia = liczba
+    return 1
 
-if __name__ == '__main__':
-    print(najw_wspol_dziel(11, 12))
+def nwd(li1, li2):
+    a = []
+    b = []
+    for i in range(1, li1+1):
+        if li1%i == 0:
+            a.append(i)
+    for i in range(1, li2+1):
+        if li2%i == 0:
+            b.append(i)
+    c = a+b
+    return znajdywacz(c)
+
+print(nwd(10, 100))
