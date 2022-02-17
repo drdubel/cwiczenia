@@ -9,7 +9,7 @@ def test_zyg0b():
 def test_zyg0c():
     assert zygzak('PPGPPGPG') == '3/5'
 
-def test_zyg0d():    
+def test_zyg0d():     
     assert zygzak('PPGPPGPPGPPG') == '1/2'
 
 def test_zyg0e():
