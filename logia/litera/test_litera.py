@@ -1,7 +1,4 @@
-import time
-from litera import litera, litera2
-import timeit
-import random
+from litera import litera
 from string import ascii_lowercase
 
 
@@ -12,18 +9,6 @@ def test_lit0a():
 def test_lit0b():
     assert litera(['julka', 'lubi', 'psy']) == ['l','u']
 
-
-def test_perf():
-    slowa = [
-        "".join(random.choice(ascii_lowercase) 
-            for _ in range(random.randrange(3, 12)))
-                for j in range(1000)
-    ]
-    ns = globals()
-    ns['slowa'] = slowa
-    t_old = timeit.timeit("litera(slowa)", globals=ns, number=200)
-    t_new = timeit.timeit("litera2(slowa)", globals=ns, number=200)
-    assert t_new > t_old
 
 def test_lit0c():
     assert litera([
