@@ -19,5 +19,3 @@ def nwd(li1, li2):
             b.append(i)
     c = a+b
     return znajdywacz(c)
-
-print(nwd(10, 100))
