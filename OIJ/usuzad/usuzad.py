@@ -17,8 +17,9 @@ def usuzad(il_kloc, klocki):
             return il_ruch
     return il_ruch
 
+
 if __name__ == "__main__":
     il_kloc = int(input())
     klocki = [int(i) for i in input().split()]
     assert il_kloc == len(klocki)
-    print(usuzad(il_kloc, klocki)) 
+    print(usuzad(il_kloc, klocki))
