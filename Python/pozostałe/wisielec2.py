@@ -25,7 +25,7 @@ def wisielec():
     n = input('Chcesz z odmianami czy nie? ')
     if n.lower() == 'tak':
         slowa_do_wisielcowania = open(
-            r"Tu wpisz położenie pliku ze słowami",
+            r"/home/antek/Katalog_Antka/cwiczenia/Python/pozostałe/slowa.txt",
             encoding='utf-8'
             ).read()
         slowa_do_wisielcowania = slowa_do_wisielcowania.split()
@@ -41,8 +41,8 @@ def wisielec():
         if zgadywane_litery == '':
             print('_ '*len(wisielcowane_slowo))
         if slowo == ' '.join(wisielcowane_slowo):
-            print(ret('WYGRAŁEŚ', '–'))
-            return ret("Wisielcowanym słowem było " + wisielcowane_slowo, '–')
+            print(ret('WYGRAŁEŚ', '—'))
+            return ret("Wisielcowanym słowem było " + wisielcowane_slowo, '—')
         aktualnie_zgad_lit = wisielcowane_slowo
         podawana_litera = input("Zgadnij literę: ")
         podawana_litera = podawana_litera.lower()
@@ -52,8 +52,8 @@ def wisielec():
             print("Ta litera już była")
         elif len(podawana_litera) > 1:
             if podawana_litera == wisielcowane_slowo:
-                print(ret('WYGRAŁEŚ', '–'))
-                return ret(wisielcowane_slowo, '–')
+                print(ret('WYGRAŁEŚ', '—'))
+                return ret(wisielcowane_slowo, '—')
             else:
                 zle_proby_zgad += 3
         else:
@@ -72,8 +72,8 @@ def wisielec():
                 print('\n'.join(rys_wis[zle_proby_zgad]))
             elif zle_proby_zgad == 1:
                 print(rys_wis[zle_proby_zgad])
-    print(ret('PRZEGRAŁEŚ', '–'))
-    return ret("Wisielcowanym słowem było " + wisielcowane_slowo, '–')
+    print(ret('PRZEGRAŁEŚ', '—'))
+    return ret("Wisielcowanym słowem było " + wisielcowane_slowo, '—')
 
 
 print(wisielec())

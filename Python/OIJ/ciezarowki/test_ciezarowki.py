@@ -1,5 +1,6 @@
 from pathlib import Path
 from time import time
+#from ciezarowki_copy import main
 from ciezarowki import main
 
 
