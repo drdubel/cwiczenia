@@ -69,3 +69,4 @@ zmi/in/zmi11e.in
 zmi/in/zmi11f.in
 zmi/prog/zmi100.cpp
 zmi/prog/zmi101.py
+.gitgnore
