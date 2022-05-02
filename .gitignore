@@ -3,3 +3,4 @@
 *.out
 .vscode
 __pycache__
+.gitignore
