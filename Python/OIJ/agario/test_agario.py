@@ -1,6 +1,6 @@
 from pathlib import Path
 from time import time
-from antytrojkat import main
+from agario import main
 
 
 def test_oioioi(input_path):
@@ -9,12 +9,12 @@ def test_oioioi(input_path):
         expected_result = [i.rstrip() for i in fd]
     with input_path.open() as fd:
         start = time()
-        raw_result = main((i.rstrip() for i in fd))
+        raw_result = main(fd)
         stop = time()
     result = list(map(str, raw_result))
     assert result == expected_result
     run_time = stop - start
-    assert run_time < 8
+    assert run_time < 20
 
 
 def pytest_generate_tests(metafunc):

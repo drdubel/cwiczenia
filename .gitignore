@@ -1,6 +1,7 @@
 *.pyc
 .pytest_cache
 *.out
+*.in
 .vscode
 __pycache__
 .gitignore
