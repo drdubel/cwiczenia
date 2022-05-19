@@ -17,13 +17,13 @@ def agario(il_przeciwnikow, przeciwnicy):
             czas += 1
         except IndexError:
             return ["NIE"]
-    return [czas]
+    return czas
 
 
 def main(indata):
     il_przeciwnikow = int(next(indata))
     przeciwnicy = map(int, next(indata).split())
-    return agario(il_przeciwnikow, przeciwnicy)
+    return [agario(il_przeciwnikow, przeciwnicy)]
 
 
 def run():
