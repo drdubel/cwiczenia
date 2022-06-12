@@ -210,15 +210,9 @@ def sprawdzanie_pionowe(polozenie, litera, plansza):
             and plansza[polozenie[0]][polozenie[1] + 1] == "-"
         ):
             return [True, 0]
-    elif (
-        polozenie[1] + 1 <= 14
-        and plansza[polozenie[0] + 1][polozenie[1] + 1] == "-"
-    ):
+    elif polozenie[1] + 1 <= 14 and plansza[polozenie[0] + 1][polozenie[1] + 1] == "-":
         return [True, 0]
-    elif (
-        polozenie[1] - 1 >= 0
-        and plansza[polozenie[0]][polozenie[1] - 1] == "-"
-    ):
+    elif polozenie[1] - 1 >= 0 and plansza[polozenie[0]][polozenie[1] - 1] == "-":
         return [True, 0]
     poczatek = False
     while not poczatek:
@@ -264,15 +258,9 @@ def sprawdzanie_poziome(polozenie, litera, plansza):
             and plansza[polozenie[0] + 1][polozenie[1]] == "-"
         ):
             return [True, 0]
-    elif (
-        polozenie[0] + 1 <= 14
-        and plansza[polozenie[0] + 1][polozenie[1]] == "-"
-    ):
+    elif polozenie[0] + 1 <= 14 and plansza[polozenie[0] + 1][polozenie[1]] == "-":
         return [True, 0]
-    elif (
-        polozenie[0] - 1 >= 0
-        and plansza[polozenie[0] - 1][polozenie[1]] == "-"
-    ):
+    elif polozenie[0] - 1 >= 0 and plansza[polozenie[0] - 1][polozenie[1]] == "-":
         return [True, 0]
     poczatek = False
     while not poczatek:
@@ -323,9 +311,7 @@ def znajdz_slowa(litery_gracza, litery_do_slowa, slowa, polozenie, pion):
             elif znak != " " and il_pustych:
                 if not czy_byla_litera:
                     do_szukania += (
-                        "{l}" +
-                        "".join(f"{{{set([0, il_pustych])}}}".split()) +
-                        ")("
+                        "{l}" + "".join(f"{{{set([0, il_pustych])}}}".split()) + ")("
                     )
                     czy_byla_litera = True
                 else:
@@ -341,10 +327,7 @@ def znajdz_slowa(litery_gracza, litery_do_slowa, slowa, polozenie, pion):
                     wzorzec.append(il_pustych + 1 + wzorzec[len(wzorzec) - 1])
                 do_szukania += znak
         if il_pustych:
-            do_szukania += (
-                ")({l}" +
-                f"{{{set([0, il_pustych])}}}".replace(' ', '')
-            )
+            do_szukania += ")({l}" + f"{{{set([0, il_pustych])}}}".replace(" ", "")
         else:
             do_szukania += ")("
         do_szukania += ")$"
@@ -423,9 +406,7 @@ def sprawdz_linijke(nr_linijki, linijka, litery_gracza, plansza):
                 if wart_slo[0] > wart_naj_slo[0]:
                     wart_naj_slo = wart_slo
                     wart_naj_slo.append(
-                        [polozenie[0], polozenie.copy()[1] - 1 - len(
-                            wzorzec_slowa
-                        )]
+                        [polozenie[0], polozenie.copy()[1] - 1 - len(wzorzec_slowa)]
                     )
                 bylo_slowo = False
                 wzorzec_slowa += " "
@@ -452,17 +433,17 @@ def planszoprzejezdzacz(litery_gracza, plansza):
     return wart_naj_slo
 
 
-#t1_start = process_time()
-#print(
-#    planszoprzejezdzacz(
-#        litery_gracza(),
-#        planszozwracacz()
-#    )
-#)
-#t1_stop = process_time()
-#print(t1_stop-t1_start)
+t1_start = process_time()
+print(
+   planszoprzejezdzacz(
+       litery_gracza(),
+       planszozwracacz()
+   )
+)
+t1_stop = process_time()
+print(t1_stop-t1_start)
 
-print(czy_da_sie(False, [['rak', [0], [1, 0]]], planszozwracacz()))
+# print(czy_da_sie(False, [["rak", [0], [1, 0]]], planszozwracacz()))
 
 plansze = [
     """

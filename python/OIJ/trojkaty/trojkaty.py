@@ -34,7 +34,8 @@ def trojkaty(n):
 
 def main():
     n = int(input())
-    print(trojkaty(n))
+    # print(trojkaty(n))
+    print(rozklad(140, "BF"))
 
 
 if __name__ == "__main__":
