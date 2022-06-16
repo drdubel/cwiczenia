@@ -3,6 +3,9 @@
 *.out
 *.core
 build
-launch.json
-settings.json
+.vscode
+.pytest_cache
+__pycache__
 clojure
+.Trash-1003
+Makefile
