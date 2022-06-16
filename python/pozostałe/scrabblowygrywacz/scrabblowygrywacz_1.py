@@ -300,7 +300,7 @@ def znajdz_slowa(litery_gracza, litery_do_slowa, slowa, polozenie, pion):
     if litery_do_slowa.isspace():
         wzorzec = []
         do_szukania += (
-            ")({l}" + "".join(f"{{{set([1, len(litery_do_slowa)])}}}".split()) + ")$"
+            ")({l}{{1,%d}})$" % len(litery_do_slowa)
         )
     else:
         wzorzec = [0]
@@ -311,11 +311,11 @@ def znajdz_slowa(litery_gracza, litery_do_slowa, slowa, polozenie, pion):
             elif znak != " " and il_pustych:
                 if not czy_byla_litera:
                     do_szukania += (
-                        "{l}" + "".join(f"{{{set([0, il_pustych])}}}".split()) + ")("
+                        "{l}{{0,%d}})(" % il_pustych
                     )
                     czy_byla_litera = True
                 else:
-                    do_szukania += "{l}" + f"{{{{{il_pustych}}}}}"
+                    do_szukania += "{l}" + "{{%d}}" % il_pustych
                     wzorzec.append(il_pustych + 1 + wzorzec[len(wzorzec) - 1])
                 czy_spacje = True
                 il_pustych = 0
@@ -327,7 +327,7 @@ def znajdz_slowa(litery_gracza, litery_do_slowa, slowa, polozenie, pion):
                     wzorzec.append(il_pustych + 1 + wzorzec[len(wzorzec) - 1])
                 do_szukania += znak
         if il_pustych:
-            do_szukania += ")({l}" + f"{{{set([0, il_pustych])}}}".replace(" ", "")
+            do_szukania += ")({l}{{0,%d}}" % il_pustych
         else:
             do_szukania += ")("
         do_szukania += ")$"
@@ -435,78 +435,12 @@ def planszoprzejezdzacz(litery_gracza, plansza):
 
 t1_start = process_time()
 print(
-   planszoprzejezdzacz(
-       litery_gracza(),
-       planszozwracacz()
-   )
+    planszoprzejezdzacz(
+        litery_gracza(),
+        planszozwracacz()
+    )
 )
 t1_stop = process_time()
-print(t1_stop-t1_start)
+print(t1_stop - t1_start)
 
 # print(czy_da_sie(False, [["rak", [0], [1, 0]]], planszozwracacz()))
-
-plansze = [
-    """
-- - - - - - - - - - - - - - -
-- - - - - - - - - - - - - - -
-- - - - - - - - - - - - - - -
-- - - - - - - - - - - - - - -
-- - - - t - m - - - - - - - -
-- - - - c - a - - - - - - - -
-- - - - h a m u l e c - - - -
-- - - - ó - a - o - i - - - -
-- g w a r - - - d - a - - - -
-- - - - z - - m y d ł o - - -
-- - - - - - - - - - o - - - -
-- - - - - - - - - - - - - - -
-- - - - - - - - - - - - - - -
-- - - - - - - - - - - - - - -
-- - - - - - - - - - - - - - -
-""",
-    """
-t r o m t a d r a c j a - - -
-r - - - - - o - - - a r k o m
-o l a ł y - m - - - s - - - u
-m - - a - - a - - - k - c - r
-t o - d - - t - - - i - m - o
-a - - n - - o r a n e g o - m
-d o m y - - r o k - r - k - -
-r - - m - - - k r a - - a - -
-a - - i - o n i - r - o m e n
-c o ś - - d - e - y - d - - -
-j - m - - y - m - - - c - - -
-o - i - - - - - - - - z - - -
-m - a - - - - o d c z y n y -
-- - ł - - - - n - - - n - - -
-- - a r b u z i e - - u - - -
-""",
-]
-slowa_do_planszy2 = [
-    "tromtadracja",
-    "arkom",
-    "olały",
-    "to",
-    "oranego",
-    "domy",
-    "rok",
-    "kra",
-    "oni",
-    "omen",
-    "coś",
-    "odczyny",
-    "arbuzie",
-    "tromtadracjom",
-    "śmiała",
-    "ładnymi",
-    "ody",
-    "domator",
-    "rokiem",
-    "oni",
-    "akr",
-    "ary",
-    "jaskier",
-    "ar",
-    "odczynu",
-    "cmokam",
-    "murom",
-]
