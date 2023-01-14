@@ -1,4 +1,5 @@
 import turtle as t
+
 t.speed(0)
 t.pencolor("black")
 t.pu()
@@ -7,7 +8,7 @@ t.pd()
 
 
 def strzalka():
-    przekatna = (40**2+40**2)**0.5/2
+    przekatna = (40**2 + 40**2) ** 0.5 / 2
     t.fillcolor("green")
     t.begin_fill()
     t.fd(80)
@@ -18,7 +19,7 @@ def strzalka():
     t.lt(90)
     t.fd(przekatna)
     t.rt(90)
-    t.fd(przekatna*2)
+    t.fd(przekatna * 2)
     t.rt(90)
     t.fd(przekatna)
     t.lt(90)
@@ -29,7 +30,7 @@ def strzalka():
 
 def prostokat(ksztalt):
     t.lt(90)
-    bok_2 = 40*ksztalt
+    bok_2 = 40 * ksztalt
     t.fillcolor("red")
     t.begin_fill()
     for _ in range(2):

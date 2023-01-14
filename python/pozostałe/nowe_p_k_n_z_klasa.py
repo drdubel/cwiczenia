@@ -1,53 +1,50 @@
 import random
 import os
+
 WYGRANA = 1
 PRZEGRANA = -1
 
 pkn = {
-'pistolet':
-r'''
+    "pistolet": r"""
  _ __________________,
   \@([____]__________)
   _/\|--[___]
  /     /(()
 /______|
 \_____/
-''',
-'kamień': 
-'''
+""",
+    "kamień": """
     _______
 ---'   ____)
       (_____)
       (_____)
       (____)
 ---.__(___)
-''', 
-'papier':
-'''
+""",
+    "papier": """
     ________
 ---'    ____)____
            ______)
           _______)
          _______)
 ---.__________)
-''',
-'nożyce':
-'''
+""",
+    "nożyce": """
     _______
 ---'   ____)____
           ______)
        __________)
       (____)
 ---.__(___)
-'''
+""",
 }
 
-KA = 'kamień'
-PA = 'papier'
-NO = 'nożyce'
-PT = 'pistolet'
+KA = "kamień"
+PA = "papier"
+NO = "nożyce"
+PT = "pistolet"
 
-mozliwosci = ['kamień', 'papier', 'nożyce', 'pistolet']
+mozliwosci = ["kamień", "papier", "nożyce", "pistolet"]
 
 wygrana = {
     PA: KA,
@@ -59,6 +56,7 @@ przegrana = {
     PA: NO,
     NO: KA,
 }
+
 
 class GraczChytry:
     def __init__(self, do_ilu_gramy):
@@ -90,8 +88,10 @@ def smart_input(prompt, validator):
         except ValueError:
             pass
 
+
 def ret(text, wyp):
     return text.center(os.get_terminal_size().columns, wyp)
+
 
 def sedzia(komputer, gracz, sztuczny):
     if komputer == PT and gracz != KA and gracz != PT:
@@ -113,11 +113,12 @@ def sedzia(komputer, gracz, sztuczny):
         sztuczny.wynik(gracz, False)
         return WYGRANA
 
+
 def nowe_p_k_n():
     gameLength = int(smart_input("Gramy do: ", int))
     sztuczny = GraczChytry(gameLength)
     wynik_gracza = 0
-    wynik_komputera = 0   
+    wynik_komputera = 0
     while wynik_gracza < gameLength or wynik_komputera < gameLength:
         gracz = smart_input("co wybierasz: ", lambda x: x in mozliwosci)
         komputer = sztuczny.wybierz()
@@ -126,15 +127,18 @@ def nowe_p_k_n():
             wynik_komputera += 1
         elif wyniki == WYGRANA:
             wynik_gracza += 1
-        print('GRACZ: ', pkn[gracz], 'KOMPUTER: ', pkn[komputer], sep='\n')
-        wynik = 'wynik_komputera to '+str(wynik_komputera), 'wynik_gracza to '+str(wynik_gracza)
-        wynik = ' a '.join(wynik).upper()
-        print(ret(wynik, '–'))
+        print("GRACZ: ", pkn[gracz], "KOMPUTER: ", pkn[komputer], sep="\n")
+        wynik = "wynik_komputera to " + str(wynik_komputera), "wynik_gracza to " + str(
+            wynik_gracza
+        )
+        wynik = " a ".join(wynik).upper()
+        print(ret(wynik, "–"))
         if wynik_komputera == gameLength:
-            print('\n', ret("WYGRAŁ KOMPUTER", '–'), sep='')
+            print("\n", ret("WYGRAŁ KOMPUTER", "–"), sep="")
             break
         if wynik_gracza == gameLength:
-            print('\n', ret("WYGRAŁ GRACZ", '–'), sep='')
+            print("\n", ret("WYGRAŁ GRACZ", "–"), sep="")
             break
+
 
 nowe_p_k_n()

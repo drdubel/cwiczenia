@@ -5,9 +5,9 @@ def gra_bajteusza(wym_x, wym_y, il_pion, plansza_pion):
     return plansza_pion, max(wynik)
 
 def main():
-    plansza_pion = []
-    poz_pion = []
-    wym_y, wym_x, il_pion = list(map(int, input().split()))
+    plansza_pion=[]
+    poz_pion=[]
+    wym_y, wym_x, il_pion=list(map(int, input().split()))
     for _ in range(il_pion):
         poz_pion.append(list(map(int, input().split())))
     for i in range(wym_y):

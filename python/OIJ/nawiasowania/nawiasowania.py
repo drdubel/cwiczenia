@@ -4,14 +4,14 @@ def ciag(do_ilu):
     while wynik <= do_ilu:
         i += 1
         wynik += i
-    return wynik - i, i-1
+    return wynik - i, i - 1
 
 
 def nawiasowania(n):
     nawiasy = ""
     while n > 0:
         ile, il_nawiasow = ciag(n)
-        nawiasy += "()"*il_nawiasow + "("
+        nawiasy += "()" * il_nawiasow + "("
         n -= ile
     return nawiasy
 

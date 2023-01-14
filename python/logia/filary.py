@@ -1,18 +1,21 @@
-import turtle 
+import turtle
 import math
+
 t = turtle.Pen()
 t.shape("turtle")
 t.lt(90)
 t.speed(0)
 
+
 class Klasa(Exception):
     pass
+
 
 def filar(a):
     t.lt(45)
     t.fd(a)
     t.lt(45)
-    t.fd(a*(2/3))
+    t.fd(a * (2 / 3))
     t.lt(45)
     t.fillcolor("green")
     t.begin_fill()
@@ -23,31 +26,32 @@ def filar(a):
     t.rt(90)
     t.bk(a)
     t.rt(135)
-    t.fd(a*(2/3))
+    t.fd(a * (2 / 3))
     for i in range(2):
         t.rt(135)
         t.fd(a)
         t.rt(45)
-        t.fd(a*(2/3))
+        t.fd(a * (2 / 3))
+
 
 def filary2(a):
-    przekatna = math.sqrt(a**2*2)
+    przekatna = math.sqrt(a**2 * 2)
     t.pu()
     x = t.xcor()
     print(x)
-    t.setx(x-2/3*a)
+    t.setx(x - 2 / 3 * a)
     y = t.ycor()
-    t.sety(y-przekatna)
+    t.sety(y - przekatna)
     t.pd()
     t.rt(90)
     filar(a)
     t.pu()
-    t.fd(4/3*a)
+    t.fd(4 / 3 * a)
     t.pd()
     t.rt(90)
     filar(a)
     t.pu()
-    t.fd(2/3*a)
+    t.fd(2 / 3 * a)
     t.rt(90)
     t.bk(przekatna)
     t.lt(90)
@@ -57,7 +61,6 @@ def filary2(a):
     t.rt(90)
     filar(a)
 
-    
 
 def filary(x, y):
     a = int(input("podaj wielkość filarów: "))
@@ -69,19 +72,20 @@ def filary(x, y):
     filar(a)
     t.rt(90)
     filar(a)
-    for i in range(y//2):
+    for i in range(y // 2):
         filary2(a)
     if x > 1:
-        for i in range(x//2-1):
+        for i in range(x // 2 - 1):
             t.pu()
-            t.bk(5.55*a)
+            t.bk(5.55 * a)
             t.rt(90)
-            t.fd(42.5/30*a*(y-1))
+            t.fd(42.5 / 30 * a * (y - 1))
             t.pd()
             filar(a)
             t.rt(90)
             filar(a)
-            for i in range(y//2):
+            for i in range(y // 2):
                 filary2(a)
+
 
 filary(4, 5)

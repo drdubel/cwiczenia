@@ -14,15 +14,15 @@ def zygzak(sekw_ruch):
             akt_dl += 1
         else:
             akt_wys += 1
-        if wys/dl*akt_dl < akt_wys:
+        if wys / dl * akt_dl < akt_wys:
             return "NIE"
-        if wys/dl*akt_dl-1 > akt_wys and sekw_ruch[wyk+1] != "G":
+        if wys / dl * akt_dl - 1 > akt_wys and sekw_ruch[wyk + 1] != "G":
             return "NIE"
         wyk += 1
     wys //= nwd
     dl //= nwd
-    return f'{wys}/{dl}'
+    return f"{wys}/{dl}"
 
 
-if __name__ == '__main__':
-    zygzak('PG'*500000) == '1/1'
+if __name__ == "__main__":
+    zygzak("PG" * 500000) == "1/1"

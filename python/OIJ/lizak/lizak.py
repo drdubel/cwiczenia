@@ -13,11 +13,11 @@ def lizak(il_segmentow, segmenty):
         for _ in range(segmenty.count(mozliwa)):
             i = segmenty.index(mozliwa, i) + 1
             polozenia[mozliwa].append(i - 1)
-    wynik = 5*10**5
+    wynik = 5 * 10**5
     for liczba in polozenia:
         polozenia_liczby = polozenia[liczba]
         for i in range(2, len(polozenia_liczby)):
-            dlugosc = polozenia_liczby[i] - polozenia_liczby[i-2] + 1
+            dlugosc = polozenia_liczby[i] - polozenia_liczby[i - 2] + 1
             if wynik > dlugosc:
                 wynik = dlugosc
     return wynik

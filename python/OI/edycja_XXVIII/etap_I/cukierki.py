@@ -3,7 +3,7 @@ import sys
 
 def przestawianie(gabloty):
     for gablota in gabloty:
-        
+        pass
 
 
 def main(indata):
@@ -15,7 +15,7 @@ def main(indata):
         gabloty.append(gablota)
         pozadany_produkt = max(gablota)
         if pozadany_produkt == 0:
-            
+            pass
     print(przestawienia)
 
 
@@ -24,5 +24,5 @@ def run():
         print(line)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -299,9 +299,7 @@ def znajdz_slowa(litery_gracza, litery_do_slowa, slowa, polozenie, pion):
     czy_byla_litera = False
     if litery_do_slowa.isspace():
         wzorzec = []
-        do_szukania += (
-            ")({l}{{1,%d}})$" % len(litery_do_slowa)
-        )
+        do_szukania += ")({l}{{1,%d}})$" % len(litery_do_slowa)
     else:
         wzorzec = [0]
         for znak in litery_do_slowa:
@@ -310,9 +308,7 @@ def znajdz_slowa(litery_gracza, litery_do_slowa, slowa, polozenie, pion):
                 il_pustych += 1
             elif znak != " " and il_pustych:
                 if not czy_byla_litera:
-                    do_szukania += (
-                        "{l}{{0,%d}})(" % il_pustych
-                    )
+                    do_szukania += "{l}{{0,%d}})(" % il_pustych
                     czy_byla_litera = True
                 else:
                     do_szukania += "{l}" + "{{%d}}" % il_pustych
@@ -434,12 +430,7 @@ def planszoprzejezdzacz(litery_gracza, plansza):
 
 
 t1_start = process_time()
-print(
-    planszoprzejezdzacz(
-        litery_gracza(),
-        planszozwracacz()
-    )
-)
+print(planszoprzejezdzacz(litery_gracza(), planszozwracacz()))
 t1_stop = process_time()
 print(t1_stop - t1_start)
 

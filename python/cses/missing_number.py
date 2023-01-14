@@ -11,5 +11,5 @@ def main():
     print(brakujaca(n, liczby_podane))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

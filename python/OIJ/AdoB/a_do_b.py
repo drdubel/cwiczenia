@@ -12,8 +12,8 @@ def odAdoB(start, drogi, koniec):
                 dalej_2.append(i)
         if dalej_2 and wie_ter != koniec:
             if koniec in dalej_2:
-                if il_krokow+1 < wynik:
-                    wynik = il_krokow+1
+                if il_krokow + 1 < wynik:
+                    wynik = il_krokow + 1
                     dalej_2.remove(koniec)
             if dalej_2:
                 wie_ter = dalej_2[0]
@@ -22,7 +22,7 @@ def odAdoB(start, drogi, koniec):
             if wie_ter == koniec:
                 if il_krokow < wynik:
                     wynik = il_krokow
-            wie_ter = bylo[len(bylo)-2]
+            wie_ter = bylo[len(bylo) - 2]
             il_krokow -= 1
     if wynik == 10**24:
         return "niestety"
@@ -33,7 +33,7 @@ def main():
     il_miast, il_autos = list(map(int, input().split()))
     skad, dokad = list(map(int, input().split()))
     drogi = {}
-    for i in range(1, il_miast+1):
+    for i in range(1, il_miast + 1):
         drogi.update([[i, []]])
     for _ in range(il_autos):
         droga = list(map(int, input().split()))

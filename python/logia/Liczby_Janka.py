@@ -1,11 +1,12 @@
 from math import sqrt
 
+
 def dzie(liczba):
     dzielniki = [1]
-    for i in range(2, int(sqrt(liczba))+1):
-        if liczba%i == 0:
+    for i in range(2, int(sqrt(liczba)) + 1):
+        if liczba % i == 0:
             dzielniki.append(i)
-            dzielniki.append(liczba//i)
+            dzielniki.append(liczba // i)
     return sorted(dzielniki)
 
 
@@ -16,9 +17,9 @@ def liczby_janka(liczba):
         dzielniki = dzie(liczba)
         if len(dzielniki) == 1:
             pass
-        elif sum(dzielniki)/len(dzielniki) <= sqrt(liczba):
+        elif sum(dzielniki) / len(dzielniki) <= sqrt(liczba):
             liczby.append(str(liczba))
-    return ' '.join(liczby)
+    return " ".join(liczby)
 
 
 def main():

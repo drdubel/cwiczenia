@@ -8,5 +8,5 @@ def main():
     print(ile_nawiasowan(nawiasy))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

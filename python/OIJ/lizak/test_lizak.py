@@ -22,4 +22,4 @@ def test_liz0e():
 
 
 def test_liz0f():
-    assert lizak(500000, [1, 2]*250000) == 5
+    assert lizak(500000, [1, 2] * 250000) == 5

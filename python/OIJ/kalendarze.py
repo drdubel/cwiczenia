@@ -48,29 +48,19 @@ def main():
     for i in range(1, il_mies_B):
         dl_mies_B[i] = dl_mies_B[i] + dl_mies_B[i - 1]
     lic_zap = int(input())
-    wynik = [] 
+    wynik = []
     for _ in range(lic_zap):
         zap = input().split()
         if zap[2] == "A":
             wynik.append(
                 do_bananitow(
-                    int(zap[0]),
-                    int(zap[1]),
-                    il_mies_A,
-                    il_mies_B,
-                    dl_mies_A,
-                    dl_mies_B
+                    int(zap[0]), int(zap[1]), il_mies_A, il_mies_B, dl_mies_A, dl_mies_B
                 )
             )
         else:
             wynik.append(
                 do_arbuzan(
-                    int(zap[0]),
-                    int(zap[1]),
-                    il_mies_A,
-                    il_mies_B,
-                    dl_mies_A,
-                    dl_mies_B
+                    int(zap[0]), int(zap[1]), il_mies_A, il_mies_B, dl_mies_A, dl_mies_B
                 )
             )
     return "\n".join(wynik)

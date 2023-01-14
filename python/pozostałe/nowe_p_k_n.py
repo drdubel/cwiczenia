@@ -1,11 +1,11 @@
 import random
 import os
+
 PRZEGRANA = -1
 WYGRANA = 1
 
 pkn = {
-"pistolet":
-r"""
+    "pistolet": r"""
  _ __________________,
   \@([____]__________)
   _/\|--[___]
@@ -13,17 +13,15 @@ r"""
 /______|
 \_____/
 """,
-"kamień":
-"""
+    "kamień": """
     _______
 ---"   ____)
       (_____)
       (_____)
       (____)
 ---.__(___)
-""", 
-"papier":
-"""
+""",
+    "papier": """
     ________
 ---"    ____)____
            ______)
@@ -31,15 +29,14 @@ r"""
          _______)
 ---.__________)
 """,
-"nożyce":
-"""
+    "nożyce": """
     _______
 ---"   ____)____
           ______)
        __________)
       (____)
 ---.__(___)
-"""
+""",
 }
 
 KA = "kamień"
@@ -49,16 +46,8 @@ PT = "pistolet"
 
 mozliwosci = ["kamień", "papier", "nożyce", "pistolet"]
 
-wygrana = {
-    PA: KA,
-    NO: PA,
-    KA: NO
-}
-wygrana2 = {
-    PT: PA,
-    KA: PT,
-    NO: PT
-}
+wygrana = {PA: KA, NO: PA, KA: NO}
+wygrana2 = {PT: PA, KA: PT, NO: PT}
 
 
 def madry_komputer(z_gracza, pop_z_gracza, pop_z_gracza2):
@@ -128,7 +117,9 @@ def nowe_p_k_n():
             elif a == WYGRANA:
                 wynik_gracza += 1
             print("GRACZ: ", pkn[gracz], "KOMPUTER: ", pkn[komputer], sep="\n")
-            wynik = "wynik_komputera to " + str(wynik_komputera), "wynik_gracza to " + str(wynik_gracza)
+            wynik = "wynik_komputera to " + str(
+                wynik_komputera
+            ), "wynik_gracza to " + str(wynik_gracza)
             wynik = " a ".join(wynik).upper()
             print(ret(wynik, "–"))
             if wynik_komputera == game_length:

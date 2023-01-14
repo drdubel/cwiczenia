@@ -27,7 +27,7 @@ def rozklad(n, znak):
 def trojkaty(n):
     wzor = ""
     wzor += rozklad(n, "F") + rozklad(n, "B")
-    for i in range(n-1, 0, -1):
+    for i in range(n - 1, 0, -1):
         wzor += "D" + rozklad(i, "E") + rozklad(i, "AC")
     return wzor + "D"
 
