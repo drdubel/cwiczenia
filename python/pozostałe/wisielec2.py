@@ -25,7 +25,7 @@ def wisielec():
     n = input('Chcesz z odmianami czy nie? ')
     if n.lower() == 'tak':
         slowa_do_wisielcowania = open(
-            r"/home/antek/Katalog_Antka/cwiczenia/Python/pozostałe/slowa.txt",
+            r"slowa.txt",
             encoding='utf-8'
             ).read()
         slowa_do_wisielcowania = slowa_do_wisielcowania.split()

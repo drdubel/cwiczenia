@@ -1,14 +1,17 @@
-import random
 import os
 import pickle
+import random
 import string
+
 
 class MalformedHangman(Exception):
     pass
 
-n = input('Chcesz z odmianami? ')
+n = "tak"
+slowa_do_wisielcowania = open(r"slowa.txt", encoding='utf-8').read()
+slowa_do_wisielcowania = slowa_do_wisielcowania.split()
 if n.lower() == 'tak':
-    slowa_do_wisielcowania = open(r"Tu wpisz położenie pliku ze słowami", encoding='utf-8').read()
+    slowa_do_wisielcowania = open(r"slowa.txt", encoding='utf-8').read()
     slowa_do_wisielcowania = slowa_do_wisielcowania.split()
 elif n.lower() == 'nie':
     slowa_do_wisielcowania = open(r"Tu wpisz położenie pliku ze słowami", encoding='utf-8').read()
