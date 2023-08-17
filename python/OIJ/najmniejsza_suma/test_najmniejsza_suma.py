@@ -18,14 +18,10 @@ def test_naj0d():
 
 
 def test_naj0e():
-    assert najmniejsza_suma(
-        [9 for i in range(200000)],
-        15000
-        ) == 599999999999985000
+    assert najmniejsza_suma([9 for i in range(200000)], 15000) == 599999999999985000
 
 
 def test_naj0f():
-    assert najmniejsza_suma(
-        list(map(int, sorted('11100000'*25000))),
-        60000
-        ) == 24015000
+    assert (
+        najmniejsza_suma(list(map(int, sorted("11100000" * 25000))), 60000) == 24015000
+    )

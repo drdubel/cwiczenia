@@ -52,7 +52,7 @@ def main():
         karty_graczy.append(input())
     wynik = oczko(karty_graczy, il_graczy)
     print(wynik[0])
-    print(' '.join(list(map(str, wynik[1]))))
+    print(" ".join(list(map(str, wynik[1]))))
 
 
 if __name__ == "__main__":

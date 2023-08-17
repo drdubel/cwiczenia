@@ -23,6 +23,7 @@ liczby_silne.sort()
 def bieda_cache(fn):
     cache = {}
     limit = 99999
+
     @wraps(fn)
     def cached_fn(*args, **kwargs):
         key = (args, tuple(kwargs.items()))
@@ -34,10 +35,12 @@ def bieda_cache(fn):
                 cache.popitem()
             cache[key] = result
             return result
+
     return cached_fn
 
 
 cache = {}
+
 
 def suma_zakresu(a, b, cache=cache):
     try:
@@ -45,8 +48,11 @@ def suma_zakresu(a, b, cache=cache):
     except KeyError:
         res = sum(
             liczby_silne[
-                bisect.bisect_left(liczby_silne, a) : bisect.bisect_right(liczby_silne, b)
-            ])
+                bisect.bisect_left(liczby_silne, a) : bisect.bisect_right(
+                    liczby_silne, b
+                )
+            ]
+        )
         cache[(a, b)] = res
         return res
 
@@ -58,6 +64,5 @@ def main():
     print("\n".join(wynik))
 
 
-
 if __name__ == "__main__":
-    cProfile.run("main()") #main()
+    cProfile.run("main()")  # main()

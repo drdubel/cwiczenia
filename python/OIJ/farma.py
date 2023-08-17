@@ -1,8 +1,7 @@
 def liczenie_zwierzat(il_zwierzat, il_nog):
     il_krow = 0
     il_kur = 0
-    srodek = il_zwierzat//2
-    
+    srodek = il_zwierzat // 2
 
 
 def main():

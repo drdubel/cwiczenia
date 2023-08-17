@@ -1,5 +1,6 @@
 DIGITS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
+
 def dec2cos(integer, radix=2):
     assert 2 <= radix <= len(DIGITS)
     digits = []
@@ -10,14 +11,16 @@ def dec2cos(integer, radix=2):
     digits.reverse()
     return "".join(digits)
 
+
 def cos2dec(liczba, system=2):
     liczba = str(liczba)[::-1]
     wykonanie = 0
     wynik = 0
     for cyfra in liczba:
-        wynik += system**wykonanie*int(DIGITS.index(cyfra))
+        wynik += system**wykonanie * int(DIGITS.index(cyfra))
         wykonanie += 1
     return wynik
+
 
 def main():
     sys = input()
@@ -26,5 +29,6 @@ def main():
     else:
         print(dec2cos(int(input())))
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()

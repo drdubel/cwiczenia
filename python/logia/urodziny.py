@@ -11,17 +11,17 @@ dzien_roku = {
     10: 273,
     11: 304,
     12: 334,
-    31: '02',
-    59: '03',
-    90: '04',
-    120: '05',
-    151: '06',
-    181: '07',
-    212: '08',
-    243: '09',
-    273: '10',
-    304: '11',
-    334: '12',
+    31: "02",
+    59: "03",
+    90: "04",
+    120: "05",
+    151: "06",
+    181: "07",
+    212: "08",
+    243: "09",
+    273: "10",
+    304: "11",
+    334: "12",
 }
 
 
@@ -54,9 +54,9 @@ def data_dni_temu(ile_dni, il_dni_roku, data):
         dzien -= 1
         dzien_w_miesiacu += 1
     miesiac = dzien_roku[dzien]
-    dzien_w_miesiacu -= (il_dni_roku - 364)
+    dzien_w_miesiacu -= il_dni_roku - 364
     if dzien_w_miesiacu < 10:
-        dzien_w_miesiacu = f'0{dzien_w_miesiacu}'
+        dzien_w_miesiacu = f"0{dzien_w_miesiacu}"
     data = f"u{dzien_w_miesiacu}{miesiac}{data[5:9]}"
     return data
 
@@ -64,11 +64,11 @@ def data_dni_temu(ile_dni, il_dni_roku, data):
 def urodziny(urodzenie, która):
     rok = int(urodzenie[5:9])
     ile_dni = 0
-    while ile_dni < która*1000:
+    while ile_dni < która * 1000:
         ile_dni += czy_przes(rok)
         rok += 1
     urodzenie = urodzenie[0:5] + str(rok)
-    return data_dni_temu(ile_dni - która*1000, czy_przes(rok), urodzenie)
+    return data_dni_temu(ile_dni - która * 1000, czy_przes(rok), urodzenie)
 
 
 print(urodziny("u13022004", 2))

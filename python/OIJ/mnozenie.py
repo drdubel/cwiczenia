@@ -1,10 +1,8 @@
 def dzielenie(liczby):
     for liczba in liczby:
-        
 
 
 def mnozenie(il_klockow, wart_klockow, klocki):
-    
 
 
 def main():

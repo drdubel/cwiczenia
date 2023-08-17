@@ -16,5 +16,5 @@ def run():
         print(line)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     run()

@@ -49,7 +49,9 @@ def ciezarowki(il_ciezarowek, algogrod, bajtogrod, lista_ciezarowek):
     czas_etapu = 0
     czas_calkowity = 0
     for _ in range(500_000):
-        czas_etapu, nes_x, nes_v, lista_ciezarowek = przeladunek(nes_x, nes_v, lista_ciezarowek, czas_etapu, bajtogrod)
+        czas_etapu, nes_x, nes_v, lista_ciezarowek = przeladunek(
+            nes_x, nes_v, lista_ciezarowek, czas_etapu, bajtogrod
+        )
         czas_calkowity += czas_etapu
         if not lista_ciezarowek:
             czas_calkowity += abs(bajtogrod - nes_x) / nes_v

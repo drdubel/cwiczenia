@@ -1,13 +1,14 @@
 def dzielniki(lic):
     wynik = []
     i = 1
-    while i*i <= lic:
+    while i * i <= lic:
         if lic % i == 0:
             wynik.append(i)
-            if lic//i != i:
-                wynik.append(lic//i)
+            if lic // i != i:
+                wynik.append(lic // i)
         i += 1
     return wynik
+
 
 def czekolada(liczby):
     liczby = liczby.split()
@@ -15,7 +16,7 @@ def czekolada(liczby):
     b = int(liczby[1])
     c = int(liczby[2])
     d = int(liczby[3])
-    if a*b < c*d:
+    if a * b < c * d:
         return "NIE"
     dzie_c = dzielniki(c)
     dzie_d = dzielniki(d)
@@ -30,14 +31,21 @@ def czekolada(liczby):
             lic_nowe[0] *= dzie
         else:
             lic_nowe[1] *= dzie
-        if lic_nowe[0] <= a and lic_nowe[1] <= b or lic_nowe[1] <= a and lic_nowe[0] <= b:
+        if (
+            lic_nowe[0] <= a
+            and lic_nowe[1] <= b
+            or lic_nowe[1] <= a
+            and lic_nowe[0] <= b
+        ):
             return "TAK"
         lic_nowe = [c, d]
     return "NIE"
 
+
 def main():
     liczby = input()
     print(czekolada(liczby))
+
 
 if __name__ == "__main__":
     main()

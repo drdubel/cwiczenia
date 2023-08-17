@@ -1,5 +1,7 @@
 import turtle
-t=turtle.Pen()
+
+t = turtle.Pen()
+
 
 def marceli():
     while True:
@@ -9,10 +11,12 @@ def marceli():
             return trut
         print("źle!")
 
+
 def figura_na_zawolanie():
     trut = marceli()
     for i in range(trut):
-        t.forward(150/trut)
-        t.left(360/trut)
-        
+        t.forward(150 / trut)
+        t.left(360 / trut)
+
+
 figura_na_zawolanie()

@@ -5,7 +5,7 @@ def speedrun(poziomy):
             return poziom
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     liczba_poziomow = int(input())
     poziomy = [int(p) for p in input().split()]
     assert 1 < liczba_poziomow < 100000

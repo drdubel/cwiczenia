@@ -3,8 +3,8 @@ def czydrzewo(il_drzew, il_kraw, kraw):
         return "niedrzewo", kraw
     return "drzewo"
 
+
 def main():
     il_drzew, il_kraw = list(map(int, input().split()))
     kraw = {}
     for i in range(il_kraw):
-        

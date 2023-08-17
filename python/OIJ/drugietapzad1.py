@@ -1,5 +1,5 @@
 def czy_trian_pop(odcinki):
-    lpsz_odc = ''
+    lpsz_odc = ""
     for odcinek in odcinki:
         lpsz_odc += str()
 

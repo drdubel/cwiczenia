@@ -1,4 +1,5 @@
-from turtle import*
+from turtle import *
+
 
 def zkwa():
     color("green")
@@ -8,6 +9,7 @@ def zkwa():
         rt(90)
     end_fill()
 
+
 def pkwa():
     color("yellow")
     begin_fill()
@@ -15,6 +17,7 @@ def pkwa():
         fd(30)
         rt(90)
     end_fill()
+
 
 def noga_1():
     zkwa()
@@ -26,6 +29,7 @@ def noga_1():
         rt(90)
         pkwa()
 
+
 def brzuch():
     for i in range(5):
         lt(90)
@@ -34,7 +38,8 @@ def brzuch():
         for i in range(3):
             pkwa()
             fd(30)
-        bk(90) 
+        bk(90)
+
 
 def reka_1():
     for i in range(3):
@@ -46,6 +51,7 @@ def reka_1():
         lt(90)
         pkwa()
     zkwa()
+
 
 def glowa():
     lt(90)
@@ -69,6 +75,7 @@ def glowa():
     lt(90)
     zkwa()
 
+
 def reka_2():
     rt(90)
     pu()
@@ -84,6 +91,7 @@ def reka_2():
         rt(90)
         pkwa()
     zkwa()
+
 
 def noga_2():
     rt(90)
@@ -103,6 +111,7 @@ def noga_2():
     fd(30)
     zkwa()
 
+
 def robot():
     speed(0)
     shape("turtle")
@@ -112,5 +121,6 @@ def robot():
     glowa()
     reka_2()
     noga_2()
+
 
 robot()

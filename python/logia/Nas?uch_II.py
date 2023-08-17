@@ -4,14 +4,11 @@ def nasluch_II(slowa):
     for lit_0, lit_1 in zip(slowa[0], slowa[1]):
         if lit_0 == lit_1:
             wynik += 10
-            slowa[0] = slowa[0][:i] + slowa[0][i+1:]
-            slowa[1] = slowa[1][:i] + slowa[1][i+1:]
+            slowa[0] = slowa[0][:i] + slowa[0][i + 1 :]
+            slowa[1] = slowa[1][:i] + slowa[1][i + 1 :]
             i -= 1
         i += 1
-    dlugosci = {
-        len(slowa[0]): slowa[0],
-        len(slowa[1]): slowa[1]
-    }
+    dlugosci = {len(slowa[0]): slowa[0], len(slowa[1]): slowa[1]}
     krotsze = slowa.index(dlugosci[min(len(slowa[0]), len(slowa[1]))])
     for lit_0, lit_1 in zip(slowa[0], slowa[1]):
         if krotsze == 0:

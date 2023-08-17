@@ -15,4 +15,5 @@ def ile(lista):
             wynik += 1
     return wynik
 
+
 print(ile([134, 7, 123, 321]))

@@ -3,8 +3,8 @@ import pygame
 pygame.init()
 screen = pygame.display.set_mode([500, 500])
 running = True
-pygame.display.set_caption('Show Text')
-font = pygame.font.Font('freesansbold.ttf', 12)
+pygame.display.set_caption("Show Text")
+font = pygame.font.Font("freesansbold.ttf", 12)
 
 while running:
     for event in pygame.event.get():
@@ -16,7 +16,7 @@ while running:
         text = font.render(f"{i}", True, (0, 0, 0), (255, 255, 255))
         textRect = text.get_rect()
         pygame.draw.line(screen, (0, 0, 0), (i, 255), (i, 245))
-        textRect.center = (i+1, 240)
+        textRect.center = (i + 1, 240)
         screen.blit(text, textRect)
     pygame.display.flip()
 

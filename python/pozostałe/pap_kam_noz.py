@@ -1,23 +1,22 @@
 import random
-KA = 'kamień'
-PA = 'papier'
-NO = 'nożyce'
-CZ = 'czarna_dz'
-KO = 'komputer'
-TR = 'śrut'
+
+KA = "kamień"
+PA = "papier"
+NO = "nożyce"
+CZ = "czarna_dz"
+KO = "komputer"
+TR = "śrut"
 
 wygrywa = {
     KA: PA,
     PA: NO,
     NO: KA,
-    KO: KA,
-    PA: KO,
-    NO: KO,
 }
 
 WYGRANA = 1
 PRZEGRANA = -1
 REMIS = 0
+
 
 def sedzia(ah, oh):
     if ah == oh:
@@ -35,12 +34,16 @@ def sedzia(ah, oh):
     else:
         return WYGRANA
 
+
 def marceli(z):
     while True:
-        trut = input("wybierz papier, nożyce, kamień, komputer, śrut, czy czarną dziurę: ")
+        trut = input(
+            "wybierz papier, nożyce, kamień, komputer, śrut, czy czarną dziurę: "
+        )
         if trut in z:
             return trut
         print("źle!")
+
 
 def p_k_n_c(tury):
     pkt = 0
@@ -52,32 +55,31 @@ def p_k_n_c(tury):
         oh = random.choice(z)
         koniec = sedzia(ah, oh)
         pkt += koniec
-        print('komputer wybrał:', oh)
-        print('gracz wybrał:', ah)
+        print("komputer wybrał:", oh)
+        print("gracz wybrał:", ah)
         if koniec == REMIS:
-            print('remis')
-            print('gracz ma', pkt_b, 'a komputer', pkt_a) 
+            print("remis")
+            print("gracz ma", pkt_b, "a komputer", pkt_a)
         if koniec == WYGRANA and ah != PA and oh != NO:
-            print('wygrał gracz')
+            print("wygrał gracz")
             pkt_b += 1
-            print('gracz ma', pkt_b, 'a komputer', pkt_a) 
+            print("gracz ma", pkt_b, "a komputer", pkt_a)
         if koniec == PRZEGRANA or ah == PA and oh == NO:
-            print('przegrał gracz a wygrał komputer')
+            print("przegrał gracz a wygrał komputer")
             pkt_a += 1
-            print('gracz ma', pkt_b, 'a komputer', pkt_a)
+            print("gracz ma", pkt_b, "a komputer", pkt_a)
         if pkt_b == tury:
             if tury - pkt_a == 1:
-                print('gracz wygrał', 'jednym punktem')
+                print("gracz wygrał", "jednym punktem")
             else:
-                print('gracz wygrał', tury - pkt_a, 'punktami')
+                print("gracz wygrał", tury - pkt_a, "punktami")
             return
         if pkt_a == tury:
             if tury - pkt_b == 1:
-                print('komputer wygrał', 'jednym punktem')
+                print("komputer wygrał", "jednym punktem")
             else:
-                print('komputer wygrał', tury - pkt_b, 'punktami')
+                print("komputer wygrał", tury - pkt_b, "punktami")
             return
-    
 
 
 p_k_n_c(9)

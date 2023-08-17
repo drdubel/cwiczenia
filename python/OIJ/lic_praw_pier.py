@@ -1,8 +1,8 @@
 def czy_pierw(lic):
     lic = lic**0.5
-    if lic > 1 and lic%1 == 0:
+    if lic > 1 and lic % 1 == 0:
         lic = int(lic)
-        for i in range(2, int(lic/2)+1):
+        for i in range(2, int(lic / 2) + 1):
             if (lic % i) == 0:
                 return "NIE"
         else:
@@ -10,11 +10,13 @@ def czy_pierw(lic):
     else:
         return "NIE"
 
+
 def lic_praw_pier(il_liczb, liczby):
     wynik = []
     for liczba in liczby:
         wynik.append(czy_pierw(liczba))
     return wynik
+
 
 def main():
     il = int(input())
@@ -23,7 +25,8 @@ def main():
     wynik = lic_praw_pier(il, liczby)
     for i in wynik:
         print(i)
-    #print(wynik)
+    # print(wynik)
+
 
 if __name__ == "__main__":
     main()
