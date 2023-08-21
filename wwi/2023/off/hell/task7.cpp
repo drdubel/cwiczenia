@@ -1,0 +1,1 @@
+extern/**/"C"{int/**/printf(const/**/char*format,...);}/**/int/**/main()/**/{printf("Hello%cworld",(char)32);}
