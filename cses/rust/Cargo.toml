@@ -1,9 +1,10 @@
 [workspace]
 
 members = [
-	"repetitions/repetitions_rust",
-	"permutations/permutations_rust",
-	"weird_algorithm/weird_algorithm_rust",
-	"increasing_array/increasing_array_rust",
-	"number_spiral/number_spiral_rust",
+	"repetitions",
+	"permutations",
+	"weird_algorithm",
+	"increasing_array",
+	"number_spiral",
+	"two_knights",
 ]
